@@ -1,0 +1,24 @@
+# role based access control
+permission:
+  enabled: true
+  role:
+    admin:
+      '/api/s/projects': GET,POST,PUT,DELETE
+      '/api/s/issues': GET,POST,PUT,DELETE
+      '/api/s/comments': GET,POST,PUT,DELETE
+      '/api/s/members': GET,POST,PUT,DELETE
+    manager:
+      '/api/s/projects': GET,POST,PUT,DELETE
+      '/api/s/issues': GET,POST,PUT,DELETE
+      '/api/s/comments': GET,POST,PUT,DELETE
+      '/api/s/members': GET,POST,PUT,DELETE
+      '/api/t': GET
+    user:
+      '/api/s/projects':
+      '/api/s/issues': GET,POST,PUT,DELETE
+      '/api/s/comments': GET,POST,PUT,DELETE
+      '/api/s/members': PUT
+
+jwt:
+  headername: jwt
+  key: B57666B99EEAE1B41981735D4A71598E
